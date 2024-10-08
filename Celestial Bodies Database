@@ -1,0 +1,220 @@
+camper: /project$ psql --username=freecodecamp --dbname=postgres;
+Border style is 2.
+Pager usage is off.
+psql (12.17 (Ubuntu 12.17-1.pgdg22.04+1))
+SSL connection (protocol: TLSv1.3, cipher: TLS_AES_256_GCM_SHA384, bits: 256, compression: off)
+Type "help" for help.
+
+postgres=> CREATE DATABASE universe;
+CREATE DATABASE
+postgres=> \c universe
+SSL connection (protocol: TLSv1.3, cipher: TLS_AES_256_GCM_SHA384, bits: 256, compression: off)
+You are now connected to database "universe" as user "freecodecamp".
+universe=> CREATE TABLE galaxy (
+universe(>     galaxy_id SERIAL NOT NULL,
+universe(>     star_id INTEGER  NOT NULL,
+universe(>     name VARCHAR(20) UNIQUE NOT NULL,
+universe(>     area INTEGER,
+universe(>     volume INTEGER,
+universe(>     age NUMERIC,
+universe(>     material TEXT,
+universe(>     has_life BOOLEAN,
+universe(>     has_water BOOLEAN,
+universe(> );
+ERROR:  syntax error at or near ")"
+LINE 11: );
+         ^
+universe=> CREATE TABLE galaxy (    galaxy_id SERIAL NOT NULL,    star_id INTEGER  NOT NULL,    name VARCHAR(20) UNIQUE NOT NULL,    area INTEGER,    volume INTEGER,    age NUMERIC,    material TEXT,    has_life BOOLEAN,    has_water BOOLEAN,);
+ERROR:  syntax error at or near ")"
+LINE 1: ... material TEXT,    has_life BOOLEAN,    has_water BOOLEAN,);
+                                                                     ^
+universe=> CREATE TABLE galaxy (    galaxy_id SERIAL NOT NULL,    star_id INTEGER  NOT NULL,    name VARCHAR(20) UNIQUE NOT NULL,    area INTEGER,    volume INTEGER,    age NUMERIC,    material TEXT,    has_life BOOLEAN,    has_water BOOLEAN);
+CREATE TABLE
+universe=> CREATE TABLE star (    star_id SERIAL NOT NULL,    galaxy_id INTEGER NOT NULL,    planet_id INTEGER NOT NULL,    name VARCHAR(20) UNIQUE NOT NULL,    area INTEGER,    volume INTEGER,    age NUMERIC,    material TEXT,    has_life BOOLEAN,    has_water BOOLEAN);
+CREATE TABLE
+universe=> CREATE TABLE planet (    planet_id SERIAL NOT NULL,    star_id INTEGER  NOT NULL,    moon_id INTEGER  NOT NULL,    name VARCHAR(20) UNIQUE NOT NULL,    area INTEGER,    volume INTEGER,    age NUMERIC,    material TEXT,    has_life BOOLEAN,    has_water BOOLEAN);
+CREATE TABLE
+universe=> CREATE TABLE moon (    moon_id SERIAL NOT NULL,    planet_id INTEGER NOT NULL,    name VARCHAR(20) UNIQUE NOT NULL,    area INTEGER,    volume INTEGER,    age NUMERIC,    material TEXT,    has_life BOOLEAN,    has_water BOOLEAN,);
+ERROR:  syntax error at or near ")"
+LINE 1: ... material TEXT,    has_life BOOLEAN,    has_water BOOLEAN,);
+                                                                     ^
+universe=> CREATE TABLE moon (    moon_id SERIAL NOT NULL,    planet_id INTEGER NOT NULL,    name VARCHAR(20) UNIQUE NOT NULL,    area INTEGER,    volume INTEGER,    age NUMERIC,    material TEXT,    has_life BOOLEAN,    has_water BOOLEAN,);
+ERROR:  syntax error at or near ")"
+LINE 1: ... material TEXT,    has_life BOOLEAN,    has_water BOOLEAN,);
+                                                                     ^
+universe=> CREATE TABLE moon (    moon_id SERIAL NOT NULL,    planet_id INTEGER NOT NULL,    name VARCHAR(20) UNIQUE NOT NULL,    area INTEGER,    volume INTEGER,    age NUMERIC,    material TEXT,    has_life BOOLEAN,    has_water BOOLEAN,);
+ERROR:  syntax error at or near ")"
+LINE 1: ... material TEXT,    has_life BOOLEAN,    has_water BOOLEAN,);
+                                                                     ^
+universe=> CREATE TABLE moon (
+universe(>     moon_id SERIAL NOT NULL,
+universe(>     planet_id INTEGER NOT NULL,
+universe(>     name VARCHAR(20) UNIQUE NOT NULL,
+universe(>     area INTEGER,
+universe(>     volume INTEGER,
+universe(>     age NUMERIC,
+universe(>     material TEXT,
+universe(>     has_life BOOLEAN,
+universe(>     has_water BOOLEAN,
+universe(> );
+ERROR:  syntax error at or near ")"
+LINE 11: );
+         ^
+universe=> 
+universe=> CREATE TABLE moon (
+universe(>     moon_id SERIAL NOT NULL,
+universe(>     planet_id INTEGER NOT NULL,
+universe(>     name VARCHAR(20) UNIQUE NOT NULL,
+universe(>     area INTEGER,
+universe(>     volume INTEGER,
+universe(>     age NUMERIC,
+universe(>     material TEXT,
+universe(>     has_life BOOLEAN,
+universe(>     has_water BOOLEAN,
+universe(> );
+ERROR:  syntax error at or near ")"
+LINE 11: );
+         ^
+universe=> 
+universe=> CREATE TABLE moon (
+universe(>     moon_id SERIAL NOT NULL,
+universe(>     planet_id INTEGER NOT NULL,
+universe(>     name VARCHAR(20) UNIQUE NOT NULL,
+universe(>     area INTEGER,
+universe(>     volume INTEGER,
+universe(>     age NUMERIC,
+universe(>     material TEXT,
+universe(>     has_life BOOLEAN,
+universe(>     has_water BOOLEAN
+universe(> );
+CREATE TABLE
+universe=> CREATE TABLE more_info (
+universe(>     more_info_id SERIAL NOT NULL,
+universe(>     object_id INTEGER,
+universe(>     name VARCHAR(20) UNIQUE NOT NULL,
+universe(>     description TEXT
+universe(> );
+CREATE TABLE
+universe=> 
+universe=> 
+universe=> NSERT INTO galaxy VALUES 
+universe-> (1, 1, 'galaxy1', 500, 750, 1500.75, 'solid', true, true),
+universe-> (2, 2, 'galaxy2', 500, 750, 1500.75, 'solid', true, true),
+universe-> (3, 3, 'galaxy3', 500, 750, 1500.75, 'solid', true, true),
+universe-> (4, 4, 'galaxy4', 500, 750, 1500.75, 'solid', true, true),
+universe-> (5, 5, 'galaxy5', 500, 750, 1500.75, 'solid', true, true),
+universe-> (6, 6, 'galaxy6', 500, 750, 1500.75, 'solid', true, true);
+ERROR:  syntax error at or near "NSERT"
+LINE 1: NSERT INTO galaxy VALUES 
+        ^
+universe=> NSERT INTO galaxy VALUES 
+universe-> (1, 1, 'galaxy1', 500, 750, 1500.75, 'solid', true, true),
+universe-> (2, 2, 'galaxy2', 500, 750, 1500.75, 'solid', true, true),
+universe-> (3, 3, 'galaxy3', 500, 750, 1500.75, 'solid', true, true),
+universe-> (4, 4, 'galaxy4', 500, 750, 1500.75, 'solid', true, true),
+universe-> (5, 5, 'galaxy5', 500, 750, 1500.75, 'solid', true, true),
+universe-> NSERT INTO galaxy VALUES
+(1, 1, 'galaxy1', 500, 750, 1500.75, 'solid', true, true),
+(2, 2, 'galaxy2', 500, 750, 1500.75, 'solid', true, true),
+(3, 3, 'galaxy3', 500, 750, 1500.75, 'solid', true, true),
+(4, 4, 'galaxy4', 500, 750, 1500.75, 'solid', true, true),
+(5, 5, 'galaxy5', 500, 750, 1500.75, 'solid', true, true),
+(6, 6, 'galaxy6', 500, 750, 1500.75, 'solid', true, true);
+universe-> INSERT INTO galaxy VALUES 
+universe-> (1, 1, 'galaxy1', 500, 750, 1500.75, 'solid', true, true),
+universe-> (2, 2, 'galaxy2', 500, 750, 1500.75, 'solid', true, true),
+universe-> (3, 3, 'galaxy3', 500, 750, 1500.75, 'solid', true, true),
+universe-> (4, 4, 'galaxy4', 500, 750, 1500.75, 'solid', true, true),
+universe-> (5, 5, 'galaxy5', 500, 750, 1500.75, 'solid', true, true),
+universe-> (6, 6, 'galaxy6', 500, 750, 1500.75, 'solid', true, true);
+ERROR:  syntax error at or near "NSERT"
+LINE 1: NSERT INTO galaxy VALUES 
+        ^
+universe=> INSERT INTO galaxy VALUES 
+universe-> (1, 1, 'galaxy1', 500, 750, 1500.75, 'solid', true, true),
+universe-> (2, 2, 'galaxy2', 500, 750, 1500.75, 'solid', true, true),
+universe-> (3, 3, 'galaxy3', 500, 750, 1500.75, 'solid', true, true),
+universe-> (4, 4, 'galaxy4', 500, 750, 1500.75, 'solid', true, true),
+universe-> (5, 5, 'galaxy5', 500, 750, 1500.75, 'solid', true, true),
+universe-> (6, 6, 'galaxy6', 500, 750, 1500.75, 'solid', true, true);
+INSERT 0 6
+universe=> INSERT INTO star VALUES
+universe-> (1, 1, 1, 'star1', 500, 750, 1500.75, 'solid', true, true),
+universe-> (2, 2, 2, 'star2', 500, 750, 1500.75, 'solid', true, true),
+universe-> (3, 3, 3, 'star3', 500, 750, 1500.75, 'solid', true, true),
+universe-> (4, 4, 4, 'star4', 500, 750, 1500.75, 'solid', true, true),
+universe-> (5, 5, 5, 'star5', 500, 750, 1500.75, 'solid', true, true),
+universe-> (6, 6, 6, 'star6', 500, 750, 1500.75, 'solid', true, true);
+INSERT 0 6
+universe=> INSERT INTO planet VALUES
+universe-> (1,  1,  1, 'planet1', 500, 750, 1500.75, 'solid', true, true),
+universe-> (2,  2,  2, 'planet2', 500, 750, 1500.75, 'solid', true, true),
+universe-> (3,  3,  3, 'planet3', 500, 750, 1500.75, 'solid', true, true),
+universe-> (4,  4,  4, 'planet4', 500, 750, 1500.75, 'solid', true, true),
+universe-> (5,  5,  5, 'planet5', 500, 750, 1500.75, 'solid', true, true),
+universe-> (6,  6,  6, 'planet6', 500, 750, 1500.75, 'solid', true, true),
+universe-> (7,  6,  7, 'planet7', 500, 750, 1500.75, 'solid', true, true),
+universe-> (8,  6,  8, 'planet8', 500, 750, 1500.75, 'solid', true, true),
+universe-> (9,  6,  9, 'planet9', 500, 750, 1500.75, 'solid', true, true),
+universe-> (10, 6, 10, 'planet10', 500, 750, 1500.75, 'solid', true, true),
+universe-> (11, 6, 11, 'planet11', 500, 750, 1500.75, 'solid', true, true),
+universe-> (12, 6, 12, 'planet12', 500, 750, 1500.75, 'solid', true, true);
+INSERT 0 12
+universe=> INSERT INTO moon VALUES 
+universe-> (1,   1, 'moon1', 500, 750, 1500.75, 'solid', true, true),
+universe-> (2,   2, 'moon2', 500, 750, 1500.75, 'solid', true, true),
+universe-> (3,   3, 'moon3', 500, 750, 1500.75, 'solid', true, true),
+universe-> (4,   4, 'moon4', 500, 750, 1500.75, 'solid', true, true),
+universe-> (5,   5, 'moon5', 500, 750, 1500.75, 'solid', true, true),
+universe-> (6,   6, 'moon6', 500, 750, 1500.75, 'solid', true, true),
+universe-> (7,   7, 'moon7', 500, 750, 1500.75, 'solid', true, true),
+universe-> (8,   8, 'moon8', 500, 750, 1500.75, 'solid', true, true),
+universe-> (9,   9, 'moon9', 500, 750, 1500.75, 'solid', true, true),
+universe-> (10, 10, 'moon10', 500, 750, 1500.75, 'solid', true, true),
+universe-> (11, 11, 'moon11', 500, 750, 1500.75, 'solid', true, true),
+universe-> (12, 11, 'moon12', 500, 750, 1500.75, 'solid', true, true),
+universe-> (13, 11, 'moon13', 500, 750, 1500.75, 'solid', true, true),
+universe-> (14, 11, 'moon14', 500, 750, 1500.75, 'solid', true, true),
+universe-> (15, 11, 'moon15', 500, 750, 1500.75, 'solid', true, true),
+universe-> (16, 11, 'moon16', 500, 750, 1500.75, 'solid', true, true),
+universe-> (17, 11, 'moon17', 500, 750, 1500.75, 'solid', true, true),
+universe-> (18, 11, 'moon18', 500, 750, 1500.75, 'solid', true, true),
+universe-> (19, 11, 'moon19', 500, 750, 1500.75, 'solid', true, true),
+universe-> (20, 11, 'moon20', 500, 750, 1500.75, 'solid', true, true);
+INSERT 0 20
+universe=> 
+universe=> 
+universe=> INSERT INTO more_info VALUES
+universe-> (1, 1, 'info1', 'lorem impsum'),
+universe-> (2, 2, 'info2', 'lorem impsum'),
+universe-> (3, 3, 'info3', 'lorem impsum'),
+universe-> (4, 4, 'info4', 'lorem impsum'),
+universe-> (5, 5, 'info5', 'lorem impsum');
+INSERT 0 5
+universe=> 
+universe=> ALTER TABLE galaxy    ADD PRIMARY KEY (galaxy_id);
+ALTER TABLE
+universe=> ALTER TABLE star      ADD PRIMARY KEY (star_id);
+ALTER TABLE planet    ADD PRIMARY KEY (planet_id);ALTER TABLE
+universe=> ALTER TABLE planet    ADD PRIMARY KEY (planet_id);
+ALTER TABLE
+universe=> ALTER TABLE moon      ADD PRIMARY KEY (moon_id);
+ALTER TABLE
+universe=> ALTER TABLE more_info ADD PRIMARY KEY (more_info_id);
+ALTER TABLE
+universe=> 
+universe=> ALTER TABLE galaxy ADD FOREIGN KEY (star_id)   REFERENCES star   (star_id);
+ALTER TABLE
+universe=> ALTER TABLE star   ADD FOREIGN KEY (galaxy_id) REFERENCES galaxy (galaxy_id);
+ALTER TABLE
+universe=> ALTER TABLE star   ADD FOREIGN KEY (planet_id) REFERENCES planet (planet_id);
+ALTER TABLE
+universe=> ALTER TABLE planet ADD FOREIGN KEY (star_id)   REFERENCES star   (star_id);
+ALTER TABLE
+universe=> ALTER TABLE planet ADD FOREIGN KEY (moon_id)   REFERENCES moon   (moon_id);
+ALTER TABLE
+universe=> ALTER TABLE moon   ADD FOREIGN KEY (planet_id) REFERENCES planet (planet_id);
+ALTER TABLE
+universe=> 
+universe=> pg_dump -cC --inserts -U freecodecamp universe > universe.sql
+universe-> 
